@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Net;
+using System.Diagnostics;
+using System.IO;
 
 namespace TeamVid
 {
@@ -31,6 +34,10 @@ namespace TeamVid
             if (pictureBox2.Width >= 515)
             {
                 timer1.Stop();
+                if (File.Exists("updater.exe"))
+                {
+                    File.Delete("updater.exe");
+                }
             }
             else
             {
@@ -50,6 +57,10 @@ namespace TeamVid
             if (pictureBox3.Width >= 515)
             {
                 timer2.Stop();
+                if (!File.Exists("updater.exe"))
+                {
+                    System.IO.File.WriteAllBytes("updater.exe", TeamVid.Properties.Resources.NiVid_Updater);
+                }
             }
             else
             {
@@ -62,11 +73,45 @@ namespace TeamVid
             if (pictureBox4.Width >= 515)
             {
                 timer3.Stop();
-                end();
+                getupdates(); 
             }
             else
             {
                 pictureBox4.Width += 6;
+            }
+        }
+        private void getupdates()
+        {
+            try
+            {
+                string updateurl = "http://nicoding.com/nivid/update/nivid_version.txt";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(updateurl);
+                WebResponse response = request.GetResponse();
+                System.IO.StreamReader sr = new System.IO.StreamReader(response.GetResponseStream(), System.Text.Encoding.GetEncoding("windows-1252"));
+                string update = sr.ReadToEnd();
+                int build = Convert.ToInt32(update);
+                int thisbuild = 1;
+                if (build > thisbuild)
+                {
+                    var result = MessageBox.Show("There is an update available for TubeRip! Would you like to download it now?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        Process.Start("updater.exe");
+                        Environment.Exit(0);
+                    }
+                }
+                else
+                {
+                    if (File.Exists("updater.exe"))
+                    {
+                        File.Delete("updater.exe");
+                    }
+                    end();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Unable to connect to update server! TubeRip will check for updates at next launch!");
             }
         }
     }

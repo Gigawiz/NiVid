@@ -5,6 +5,13 @@ your connection password is updated and waiting for connections. Wnen you enter 
 the program calls the API, returns the ip address of the ID you entered, then the program will connect you to that partner.
 
 Changelog:
+V1.2A
+Added Updater Script.
+Customized Loading Bars.
+Did more work with the NiCoding API functions for NiVid's ID System.
+Started work on UDP Multicast Stream Functions.
+TODO:
+Finish UDP Multicast stream functions
 
 V1.1A
 Created GUI as well as initial coding.

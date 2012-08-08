@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeamVid.Properties {
+namespace NiVid_Updater.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TeamVid.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TeamVid.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NiVid_Updater.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -67,23 +67,9 @@ namespace TeamVid.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap loadbarbg1 {
-            get {
-                object obj = ResourceManager.GetObject("loadbarbg1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap loadingbars {
             get {
                 object obj = ResourceManager.GetObject("loadingbars", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap loadingbars1 {
-            get {
-                object obj = ResourceManager.GetObject("loadingbars1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,45 +81,10 @@ namespace TeamVid.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap loadingbars21 {
-            get {
-                object obj = ResourceManager.GetObject("loadingbars21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap loadingbars3 {
-            get {
-                object obj = ResourceManager.GetObject("loadingbars3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap logo1 {
-            get {
-                object obj = ResourceManager.GetObject("logo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap logo2 {
-            get {
-                object obj = ResourceManager.GetObject("logo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static byte[] NiVid_Updater {
-            get {
-                object obj = ResourceManager.GetObject("NiVid_Updater", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }

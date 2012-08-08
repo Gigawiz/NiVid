@@ -232,5 +232,11 @@ namespace TeamVid
             cccp cccpinstall = new cccp();
             cccpinstall.Show();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            progressbarcolors pbc = new progressbarcolors();
+            pbc.Show();
+        }
     }
 }
